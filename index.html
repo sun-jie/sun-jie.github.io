@@ -152,6 +152,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-axios配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/axios%E9%85%8D%E7%BD%AE/">axios配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/31/axios%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-05-31T15:52:28.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="配置axios"><a href="#配置axios" class="headerlink" title="配置axios"></a>配置axios</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置基准路径</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">'http://localhost:3000/'</span>;</span><br><span class="line"><span class="comment">// 设置请求拦截</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="keyword">function</span>(<span class="params">config</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 设置请求头</span></span><br><span class="line">    config.headers.mytoken = <span class="string">'hello'</span>;</span><br><span class="line">    <span class="comment">// 返回结果</span></span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 设置响应拦截</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 返回直接拿到服务器返回的结果</span></span><br><span class="line">    <span class="keyword">return</span> ret.data;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="axios传参"><a href="#axios传参" class="headerlink" title="axios传参"></a>axios传参</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//get请求方式 传统传参</span></span><br><span class="line">axios.get(<span class="string">'http://localhost:3000/data?id=123'</span>).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line"> <span class="comment">// ret.data才是服务器响应的结果</span></span><br><span class="line">    <span class="built_in">console</span>.log(ret.data) </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 使用params传参</span></span><br><span class="line">axios.get(<span class="string">'http://localhost:3000/data'</span>,&#123;</span><br><span class="line">    params:&#123;</span><br><span class="line">        name:<span class="string">'lis'</span>,</span><br><span class="line">        pwd:<span class="number">123</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line"> <span class="comment">// ret.data才是服务器响应的结果</span></span><br><span class="line">    <span class="built_in">console</span>.log(ret.data) </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//post请求传参 直接在地址栏后面书写对象格式,默认是json格式的 application/json 格式的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用params传参</span></span><br><span class="line">axios.post(<span class="string">'http://localhost:3000/data'</span>,&#123;</span><br><span class="line">name:<span class="string">'lis'</span>,</span><br><span class="line">pwd:<span class="number">123</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line"> <span class="comment">// ret.data才是服务器响应的结果</span></span><br><span class="line">    <span class="built_in">console</span>.log(ret.data) </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 要传递application/x-www-form-urlencoded格式的参数</span></span><br><span class="line"><span class="comment">// 实例化SeachParams对象</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="keyword">new</span> SearchParams();</span><br><span class="line"><span class="comment">// 使用实例化aip append追加</span></span><br><span class="line">params.append(<span class="string">'uname'</span>,<span class="string">'lis'</span>);</span><br><span class="line">params.append(<span class="string">'pwd'</span>,<span class="number">123</span>);</span><br><span class="line"><span class="comment">// 相当于 uname=lis&amp;pwd=123</span></span><br><span class="line">axios.post(<span class="string">'http://localhost:3000/data'</span>,params).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line"> <span class="comment">// ret.data才是服务器响应的结果</span></span><br><span class="line">    <span class="built_in">console</span>.log(ret.data) </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/31/axios%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-fetch发送请求" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
