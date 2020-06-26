@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>git文件管理 | Hexo</title>
+  <title>webpack的基本使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git 文件管理123456789101112131415161718192021222324252627&#x2F;&#x2F; 初始化一个包git init &#x2F;&#x2F; 将git暂时管理文件git add .&#x2F;&#x2F; 将文件提交到git仓库git commit -m &#39;备注&#39;&#x2F;&#x2F; 查看文件有没有被git仓库管理git status&#x2F;&#x2F; 创建分支git branch 分支名&#x2F;&#x2F; 创建并切换到分支git checkout -b">
+  <meta name="description" content="webpack的基本使用 创建一个文件夹 在命令行工具中使用npm init -y 初始化package.json 在根目录下创建一个webpack.config.js文件 在命令行中使用npm i webpack webpack-cli -D 下载 在命令行中下载 webpack-dev-server -D 在命令行下载npm i html-webpack-plugin -D (将文件从磁盘在抽">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git文件管理">
-<meta property="og:url" content="http://yoursite.com/2020/06/16/git%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:title" content="webpack的基本使用">
+<meta property="og:url" content="http://yoursite.com/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="git 文件管理123456789101112131415161718192021222324252627&#x2F;&#x2F; 初始化一个包git init &#x2F;&#x2F; 将git暂时管理文件git add .&#x2F;&#x2F; 将文件提交到git仓库git commit -m &#39;备注&#39;&#x2F;&#x2F; 查看文件有没有被git仓库管理git status&#x2F;&#x2F; 创建分支git branch 分支名&#x2F;&#x2F; 创建并切换到分支git checkout -b">
+<meta property="og:description" content="webpack的基本使用 创建一个文件夹 在命令行工具中使用npm init -y 初始化package.json 在根目录下创建一个webpack.config.js文件 在命令行中使用npm i webpack webpack-cli -D 下载 在命令行中下载 webpack-dev-server -D 在命令行下载npm i html-webpack-plugin -D (将文件从磁盘在抽">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-16T03:09:57.237Z">
-<meta property="article:modified_time" content="2020-06-16T03:50:12.145Z">
+<meta property="article:published_time" content="2020-06-26T12:40:03.419Z">
+<meta property="article:modified_time" content="2020-06-26T14:30:36.269Z">
 <meta property="article:author" content="孙杰">
 <meta name="twitter:card" content="summary">
   
@@ -154,27 +154,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git文件管理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-webpack的基本使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      git文件管理
+      webpack的基本使用
     </h1>
   
 
         
-        <a href="/2020/06/16/git%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-06-16T03:09:57.237Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+        <a href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-06-26T12:40:03.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="git-文件管理"><a href="#git-文件管理" class="headerlink" title="git 文件管理"></a>git 文件管理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化一个包</span></span><br><span class="line">git init </span><br><span class="line"><span class="comment">// 将git暂时管理文件</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment">// 将文件提交到git仓库</span></span><br><span class="line">git commit -m <span class="string">'备注'</span></span><br><span class="line"><span class="comment">// 查看文件有没有被git仓库管理</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment">// 创建分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"><span class="comment">// 创建并切换到分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line"><span class="comment">// 第一次将分支推送到远端仓库</span></span><br><span class="line">git push -u 远端地址 分支名</span><br><span class="line"><span class="comment">// 查看文件提交的状态</span></span><br><span class="line">git log </span><br><span class="line"><span class="comment">// 将文件恢复到原来的状态 (commitID)</span></span><br><span class="line">git reset --hard commitID</span><br><span class="line"><span class="comment">// 将本地git仓库中的文件推送到码云或github中</span></span><br><span class="line">git push 仓库地址 分支名称</span><br><span class="line"><span class="comment">// 将别人的远程仓库的文件clone到本地</span></span><br><span class="line">git clone 远程地址 分支名称</span><br><span class="line"><span class="comment">// 查看git版本</span></span><br><span class="line">git --version</span><br><span class="line"><span class="comment">// git的使用前配置</span></span><br><span class="line">git config --global user.name 提交人姓名</span><br><span class="line">git config --global user.email 提交人邮箱</span><br></pre></td></tr></table></figure>
+        <h3 id="webpack的基本使用"><a href="#webpack的基本使用" class="headerlink" title="webpack的基本使用"></a>webpack的基本使用</h3><ol>
+<li>创建一个文件夹</li>
+<li>在命令行工具中使用npm init -y 初始化package.json</li>
+<li>在根目录下创建一个webpack.config.js文件</li>
+<li>在命令行中使用npm i webpack webpack-cli -D 下载</li>
+<li>在命令行中下载 webpack-dev-server -D</li>
+<li>在命令行下载npm i html-webpack-plugin -D (将文件从磁盘在抽到内存中)</li>
+<li>在命令行中下载 npm i style-loader css-loader -D<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入系统模块path </span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="comment">// 引入html-webpack-plugin插件</span></span><br><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = (<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="comment">// 将文件抽离到内存中</span></span><br><span class="line"><span class="keyword">const</span> htmlPlugin = <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">    <span class="comment">//要抽离的文件地址</span></span><br><span class="line">    template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">    <span class="comment">//处理后的名字</span></span><br><span class="line">    filename:<span class="string">'index.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 导出</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 编译模式</span></span><br><span class="line">    mode: <span class="string">'development'</span>,</span><br><span class="line">    <span class="comment">// 需要处理的文件</span></span><br><span class="line">    entry: path.join(__dirname,<span class="string">'./scr/index.js'</span>),</span><br><span class="line">    <span class="comment">// 处理后的文件放那个文件夹,处理后的文件名称</span></span><br><span class="line">    output:&#123;</span><br><span class="line">        <span class="comment">//存放的路径</span></span><br><span class="line">        path:<span class="string">'./dist'</span>,</span><br><span class="line">        <span class="comment">//处理后的文件名称</span></span><br><span class="line">        filename:<span class="string">'index.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理html到内存中</span></span><br><span class="line">    plugins:[htmlPlugin],</span><br><span class="line">    <span class="comment">// 所有第三方文件模块的匹配规则</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[&#123;</span><br><span class="line">            <span class="comment">// test表示匹配的文件类型, use表示对应要调用的加载器 loader</span></span><br><span class="line">            <span class="comment">// 以css后缀的文件</span></span><br><span class="line">            test:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="在package-json文件中脚本命令-使用-npm-run-dev-启动webpack打包"><a href="#在package-json文件中脚本命令-使用-npm-run-dev-启动webpack打包" class="headerlink" title="在package.json文件中脚本命令 (使用 npm run dev) 启动webpack打包"></a>在package.json文件中脚本命令 (使用 npm run dev) 启动webpack打包</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">script:&#123;</span><br><span class="line">    <span class="comment">// 让文件在浏览器在自动打开 域名ip 为 127.0.0.1 端口为8080</span></span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --open --host 127.0.0.1 --port 8080"</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
 
@@ -264,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/16/git%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack的基本使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/02/json-server%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">json-server模拟接口</div>
+    <a href="/2020/06/16/git%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git文件管理</div>
       <i class="icon-circle-right"></i>
     </a>
   
