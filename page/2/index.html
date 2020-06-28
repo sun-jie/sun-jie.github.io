@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="孙杰">
@@ -152,292 +152,153 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-操作数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/">操作数组</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2020-05-26T03:03:32.913Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数组的操作方法"><a href="#数组的操作方法" class="headerlink" title="数组的操作方法"></a>数组的操作方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组的遍历</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>];</span><br><span class="line"><span class="comment">// 使用for循环变量</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在一个数组里面放几个不同类型的数据</span></span><br><span class="line">     <span class="keyword">let</span> ary = [<span class="string">''</span>, <span class="number">122</span>, <span class="literal">true</span>, <span class="literal">null</span>, &#123;&#125;,</span><br><span class="line">         []</span><br><span class="line">     ];</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">         <span class="comment">// 使用Object原型上的toString方法</span></span><br><span class="line">         <span class="keyword">let</span> checked = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line">         <span class="comment">// 遍历数组</span></span><br><span class="line">         data.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">             <span class="comment">// 打印数组中的每一个元素返回的数据类型</span></span><br><span class="line">             <span class="built_in">console</span>.log(checked.call(item));</span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 调用函数把数组传递</span></span><br><span class="line">     type(ary)</span><br><span class="line">     <span class="comment">// [object String]</span></span><br><span class="line">     <span class="comment">// [object Number]</span></span><br><span class="line">     <span class="comment">// [object Boolean]</span></span><br><span class="line">     <span class="comment">// [object Null]</span></span><br><span class="line">     <span class="comment">// [object Object]</span></span><br><span class="line">     <span class="comment">// [object Array]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ES6-Promise异步基本操作"><a href="#ES6-Promise异步基本操作" class="headerlink" title="ES6 Promise异步基本操作"></a>ES6 Promise异步基本操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// promise异步基本操作</span></span><br><span class="line">      <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">          <span class="comment">//异步任务</span></span><br><span class="line">          setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="comment">// 判断条件</span></span><br><span class="line">              <span class="keyword">let</span> flag = <span class="literal">true</span>;</span><br><span class="line">              <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                  <span class="comment">// 正常情况</span></span><br><span class="line">                  resolve(<span class="string">'hello world'</span>);</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  <span class="comment">//  异常情况</span></span><br><span class="line">                  reject(<span class="string">'error'</span>)</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;, <span class="number">100</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="comment">// 使用Promise实例化API  then是成功后的使用方法  catch是异常后的方法</span></span><br><span class="line">      p.then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 如果Promise内部走了resolve,就不会走reject</span></span><br><span class="line">          <span class="built_in">console</span>.log(result);  <span class="comment">// hello world</span></span><br><span class="line">      &#125;).catch(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(result);</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/28/vue%E6%89%8B%E8%84%9A%E6%9E%B6%E7%9A%84%E5%88%9B%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-06-28T09:19:24.102Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/28/vue%E6%89%8B%E8%84%9A%E6%9E%B6%E7%9A%84%E5%88%9B%E5%BB%BA/">vue手脚架的创建</a>
+      <a class="article-title" href="/2020/05/26/hello-world/">Hello World</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/28/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E5%88%9B%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-06-28T08:34:10.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+        
+        <a href="/2020/05/26/hello-world/" class="archive-article-date">
+  	<time datetime="2020-05-26T01:40:00.480Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/28/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E5%88%9B%E5%BB%BA/">Vue脚手架的创建</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/26/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2020-06-26T14:34:49.361Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/26/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/">vue脚手架项目打包</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-26T12:40:03.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">webpack的基本使用</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/16/git%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-06-16T03:09:57.237Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/16/git%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">git文件管理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/json-server%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2020-06-02T13:05:11.428Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/json-server%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3/">json-server模拟接口</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/02/vue-router%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-02T00:46:05.924Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/02/vue-router%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">vue-router的基本使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/31/axios%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-05-31T15:52:28.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/31/axios%E9%85%8D%E7%BD%AE/">axios配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/30/fetch%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/" class="archive-article-date">
-  	<time datetime="2020-05-30T14:13:08.970Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/30/fetch%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/">fetch发送请求</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/27/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-05-27T15:40:04.741Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/27/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">vue的基本使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
 
@@ -461,9 +322,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
