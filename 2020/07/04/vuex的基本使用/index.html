@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>vuex的基本使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="vuex 的基本使用123456789101112131415161718192021222324252627282930&#x2F;&#x2F; 在 store 文件夹中的index.jsimport Vue from &#39;vue&#39;import Vuex from &#39;vuex&#39;Vue.use(Vuex)export default new Vuex.Store(&amp;#123;  &#x2F;&#x2F; state中就是公共数据  sta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex的基本使用">
+<meta property="og:url" content="http://yoursite.com/2020/07/04/vuex%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vuex 的基本使用123456789101112131415161718192021222324252627282930&#x2F;&#x2F; 在 store 文件夹中的index.jsimport Vue from &#39;vue&#39;import Vuex from &#39;vuex&#39;Vue.use(Vuex)export default new Vuex.Store(&amp;#123;  &#x2F;&#x2F; state中就是公共数据  sta">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-04T15:04:39.903Z">
+<meta property="article:modified_time" content="2020-07-04T17:12:59.532Z">
 <meta property="article:author" content="孙杰">
 <meta name="twitter:card" content="summary">
   
@@ -150,106 +154,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vuex的基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vuex的基本使用
+    </h1>
+  
+
+        
+        <a href="/2020/07/04/vuex%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-07-04T15:04:39.903Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vuex-的基本使用"><a href="#vuex-的基本使用" class="headerlink" title="vuex 的基本使用"></a>vuex 的基本使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 store 文件夹中的index.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  <span class="comment">// state中就是公共数据</span></span><br><span class="line">  state:&#123;</span><br><span class="line">    count:<span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 更变 state 中的数据使用mutations中的方法</span></span><br><span class="line">  mutations:&#123;</span><br><span class="line">    add(state)&#123;</span><br><span class="line">      state.count++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 异步行为在actions中</span></span><br><span class="line">  actions:&#123;</span><br><span class="line">    <span class="comment">// 一秒钟后让 state 中的count++</span></span><br><span class="line">    addAsync(context)</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        context.commit(<span class="string">'add'</span>)</span><br><span class="line">    &#125;,<span class="number">1000</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// getters 不改变state中的数据,可以将state中是数据进行包装</span></span><br><span class="line">  getters:&#123;</span><br><span class="line">    current(state) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'当前count的最新值['</span>+state.count+<span class="string">']'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="在main-js-文件中"><a href="#在main-js-文件中" class="headerlink" title="在main.js 文件中"></a>在main.js 文件中</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store/index.js'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">//将 vuex 挂载到vue中</span></span><br><span class="line">  store,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="在组件中使用vuex中是数据"><a href="#在组件中使用vuex中是数据" class="headerlink" title="在组件中使用vuex中是数据"></a>在组件中使用vuex中是数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 使用state中数据 </span></span><br><span class="line">$store.state.数据名称</span><br><span class="line"></span><br><span class="line"><span class="comment">// 另一种方式在计算属性中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 先引入</span></span><br><span class="line"><span class="keyword">import</span> &#123;mapState&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">computed:&#123;</span><br><span class="line">  <span class="comment">// 映射为计算属性</span></span><br><span class="line">  ...mapState([<span class="string">'count'</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.在组件中使用mutations中的方法</span></span><br><span class="line">$store.commit(<span class="string">'add'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先引入</span></span><br><span class="line"><span class="keyword">import</span> &#123;mapMutations&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">methods:&#123;</span><br><span class="line">  <span class="comment">// 映射为方法属性</span></span><br><span class="line">  ...mapMutations([<span class="string">'add'</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.在组件中使用actions中是方法</span></span><br><span class="line">$store.dispatch(<span class="string">'addAsync'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先引入</span></span><br><span class="line"><span class="keyword">import</span> &#123;mapActions&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">methods:&#123;</span><br><span class="line">  <span class="comment">// 映射为方法属性</span></span><br><span class="line">  ...mapActions([<span class="string">'addAsync'</span>])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4.在组件使用getters中的方法</span></span><br><span class="line"></span><br><span class="line">$store.getters.current</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先引入</span></span><br><span class="line"><span class="keyword">import</span> &#123;mapGetters&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">methods:&#123;</span><br><span class="line">  <span class="comment">// 映射为方法属性</span></span><br><span class="line">  ...mapActions([<span class="string">'current'</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://a1.qpic.cn/psc?/V13F0zIA4OJwFc/C5I6tuQmWty2LHkfPkGvPmG1nLYkbQqRAvphZmIOjCFYopeHXs5R7e95*tTDr*h61BKKLfLMoT.NXzJG*Dp.AQ!!/c&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=hANGBQAAAAARF.Q!&amp;tl=3&amp;vuin=284264347&amp;tm=1590458400&amp;sce=60-2-2&amp;rf=0-0">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://a1.qpic.cn/psc?/V13F0zIA4OJwFc/C5I6tuQmWty2LHkfPkGvPnt993VPwm0jgKUMDLYmCcqeZCXvrB.WhpUZ8FX0iOFL3cmmEbyxhetQ9SimHx6alg!!/c&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=2gSWBgAAAAARF24!&amp;tl=3&amp;vuin=284264347&amp;tm=1590458400&amp;sce=60-2-2&amp;rf=0-0">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/27/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-05-27T15:40:04.741Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/27/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">vue的基本使用</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/04/vuex%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2020-05-26T03:03:32.913Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/28/vue%E6%89%8B%E8%84%9A%E6%9E%B6%E7%9A%84%E5%88%9B%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue手脚架的创建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/">操作数组</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-26T01:40:00.480Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -273,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
