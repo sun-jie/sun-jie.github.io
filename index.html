@@ -152,6 +152,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-cli反向代理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/08/vue-cli%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">vue-cli反向代理</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/08/vue-cli%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-07-08T02:57:43.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="当我们在脚手架中要请求发生跨域的时候就有使用vue脚手架中的反向代理来实现跨域请求"><a href="#当我们在脚手架中要请求发生跨域的时候就有使用vue脚手架中的反向代理来实现跨域请求" class="headerlink" title="当我们在脚手架中要请求发生跨域的时候就有使用vue脚手架中的反向代理来实现跨域请求"></a>当我们在脚手架中要请求发生跨域的时候就有使用vue脚手架中的反向代理来实现跨域请求</h3><p>step 1 在vue脚手架中创建vue.config.js 文件 </p>
+<p>step 2 在vue.config.js文件中怎样实现反向代理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports =&#123;</span><br><span class="line">  <span class="comment">// 在脚手架中配置方向代理要配置devServer</span></span><br><span class="line">  devServer:&#123;</span><br><span class="line">    <span class="comment">// 方向代理到哪里去 (代理到聚合服务器)</span></span><br><span class="line">    proxy :<span class="string">'http://v.juhe.cn/'</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>step 3 在脚手架中npm i axios 到本地</p>
+<p>step 4 在单文件组件中使用正常使用axios发生请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">   methods:&#123;</span><br><span class="line">    <span class="keyword">async</span> getList() &#123;</span><br><span class="line">    <span class="comment">// 获取跨域请求</span></span><br><span class="line">      <span class="keyword">const</span> &#123;data&#125; = axios.get(<span class="string">'/chengyu/query?key=69b6243feaff2e726a4f5cf637428ab2&amp;word=%E7%A7%AF%E5%B0%91%E6%88%90%E5%A4%9A'</span>)</span><br><span class="line">      <span class="comment">// 通过跨域请求回来的数据</span></span><br><span class="line">      <span class="built_in">console</span>.log(data)</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">   created() &#123;</span><br><span class="line">     <span class="comment">// 调用方法发起请求</span></span><br><span class="line">     <span class="keyword">this</span>.getList()</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/08/vue-cli%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vuex的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -722,74 +791,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/31/axios%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-fetch发送请求" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/30/fetch%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/">fetch发送请求</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/30/fetch%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/" class="archive-article-date">
-  	<time datetime="2020-05-30T14:13:08.970Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="fetch是ajax的升级版本"><a href="#fetch是ajax的升级版本" class="headerlink" title="fetch是ajax的升级版本"></a>fetch是ajax的升级版本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法格式,基本使用</span></span><br><span class="line">fetch(<span class="string">'http://localhost:3000/fetch'</span>,&#123;</span><br><span class="line"><span class="comment">//请求方式</span></span><br><span class="line"> method:<span class="string">'get'</span>,</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// text()是fetch的API</span></span><br><span class="line">    <span class="keyword">return</span> ret.text()</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(ret) </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="fetch发送get请求传统的传参和restful风格的传参"><a href="#fetch发送get请求传统的传参和restful风格的传参" class="headerlink" title="fetch发送get请求传统的传参和restful风格的传参"></a>fetch发送get请求传统的传参和restful风格的传参</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统传参</span></span><br><span class="line">fetch(<span class="string">'http://localhost:3000/fetch?id=123'</span>)</span><br><span class="line">.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> data.text();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// restful传参</span></span><br><span class="line">fetch(<span class="string">'http://localhost:3000/fetch/123'</span>)</span><br><span class="line">.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> data.text();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="fetch发送post请求传统的传参和restful风格的传参"><a href="#fetch发送post请求传统的传参和restful风格的传参" class="headerlink" title="fetch发送post请求传统的传参和restful风格的传参"></a>fetch发送post请求传统的传参和restful风格的传参</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统传参</span></span><br><span class="line">fetch(<span class="string">'http://localhost:3000/fetch'</span>,&#123;</span><br><span class="line">    method:<span class="string">'post'</span>,</span><br><span class="line">    <span class="comment">// 设置参数格式 设置字符串形式的传参</span></span><br><span class="line">    headers:&#123;</span><br><span class="line">        <span class="string">'content-Type'</span>:<span class="string">'application/x-www-form-urlencoded'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 参数通过body传递</span></span><br><span class="line">    body:<span class="string">'uname=李四&amp;pwd=123'</span>,</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> data.text();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// json格式传参</span></span><br><span class="line">fetch(<span class="string">'http://localhost:3000/fetch'</span>,&#123;</span><br><span class="line">    method:<span class="string">'post'</span>,</span><br><span class="line">    body:<span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">        uname:<span class="string">'lisi'</span>,</span><br><span class="line">        pwd:<span class="number">456</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="comment">// 设置参数类型</span></span><br><span class="line">    headers:&#123;</span><br><span class="line">        <span class="string">'content-Type'</span>:<span class="string">'application/json'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> data.text();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/30/fetch%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/">展开全文 >></a>
         </p>
       
 
