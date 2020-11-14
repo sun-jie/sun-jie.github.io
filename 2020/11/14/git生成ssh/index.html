@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>关于bootstrap的使用 | Hexo</title>
+  <title>git生成ssh | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bootstrap的cdn地址  请注意，Bootstrap 的所有 JavaScript 插件都依赖 jQuery，12345678910111213141516171819202122232425262728&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;zh-CN&quot;&gt;  &lt;head&gt;    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;">
+  <meta name="description" content="在git中创建ssh秘钥  stp:1 stp:2 stp:3 stp:4 来到自己的远程仓库 github 将秘钥粘贴到里面就ok了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于bootstrap的使用">
-<meta property="og:url" content="http://yoursite.com/2020/11/14/%E5%85%B3%E4%BA%8Ebootstrap%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="git生成ssh">
+<meta property="og:url" content="http://yoursite.com/2020/11/14/git%E7%94%9F%E6%88%90ssh/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="bootstrap的cdn地址  请注意，Bootstrap 的所有 JavaScript 插件都依赖 jQuery，12345678910111213141516171819202122232425262728&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;zh-CN&quot;&gt;  &lt;head&gt;    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;">
+<meta property="og:description" content="在git中创建ssh秘钥  stp:1 stp:2 stp:3 stp:4 来到自己的远程仓库 github 将秘钥粘贴到里面就ok了">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-14T07:13:35.464Z">
-<meta property="article:modified_time" content="2020-11-14T14:25:19.215Z">
+<meta property="og:image" content="http://yoursite.com/2020/11/14/img/git-ssh.png">
+<meta property="og:image" content="http://yoursite.com/2020/11/14/img/git-ssh1.png">
+<meta property="og:image" content="http://yoursite.com/2020/11/14/img/git-ssh2.png">
+<meta property="og:image" content="http://yoursite.com/2020/11/14/img/git-ssh3.png">
+<meta property="og:image" content="http://yoursite.com/2020/11/14/img/git-ssh4.png">
+<meta property="og:image" content="http://yoursite.com/2020/11/14/img/git-ssh5.png">
+<meta property="article:published_time" content="2020-11-14T14:48:11.793Z">
+<meta property="article:modified_time" content="2020-11-14T15:06:19.707Z">
 <meta property="article:author" content="孙杰">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/11/14/img/git-ssh.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,41 +161,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-关于bootstrap的使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git生成ssh" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      关于bootstrap的使用
+      git生成ssh
     </h1>
   
 
         
-        <a href="/2020/11/14/%E5%85%B3%E4%BA%8Ebootstrap%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-11-14T07:13:35.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-14</time>
+        <a href="/2020/11/14/git%E7%94%9F%E6%88%90ssh/" class="archive-article-date">
+  	<time datetime="2020-11-14T14:48:11.793Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="bootstrap的cdn地址-请注意，Bootstrap-的所有-JavaScript-插件都依赖-jQuery，"><a href="#bootstrap的cdn地址-请注意，Bootstrap-的所有-JavaScript-插件都依赖-jQuery，" class="headerlink" title="bootstrap的cdn地址  请注意，Bootstrap 的所有 JavaScript 插件都依赖 jQuery，"></a>bootstrap的cdn地址  请注意，Bootstrap 的所有 JavaScript 插件都依赖 jQuery，</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap 101 Template<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">      &lt;script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">      &lt;script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">    &lt;![endif]--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，世界！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="jquery-cdn-地址"><a href="#jquery-cdn-地址" class="headerlink" title="jquery   cdn 地址"></a>jquery   cdn 地址</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="vue-cdn-地址"><a href="#vue-cdn-地址" class="headerlink" title="vue   cdn 地址"></a>vue   cdn 地址</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="axios-cdn-地址"><a href="#axios-cdn-地址" class="headerlink" title="axios   cdn 地址"></a>axios   cdn 地址</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="echarts-cdn-地址"><a href="#echarts-cdn-地址" class="headerlink" title="echarts cdn 地址"></a>echarts cdn 地址</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0-beta.2/echarts.common.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="qs-js-cdn-地址"><a href="#qs-js-cdn-地址" class="headerlink" title="qs.js cdn 地址"></a>qs.js cdn 地址</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcdn.net/ajax/libs/qs/6.9.4/qs.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 在HTML文件在  使用变量Qs接 --&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="string">'http://item.taobao.com/item.htm?a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e=10'</span>;</span><br><span class="line"><span class="keyword">let</span> data = url.split(<span class="string">'?'</span>)[<span class="number">1</span>]</span><br><span class="line"><span class="built_in">console</span>.log(Qs.parse(data)) <span class="comment">// &#123;a: "1", b: "2", c: "", d: "xxx", e: "10"&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(Qs.stringify(Qs.parse(data))); <span class="comment">//  a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e=10</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="日期格式处理的js库"><a href="#日期格式处理的js库" class="headerlink" title="日期格式处理的js库"></a>日期格式处理的js库</h3><p>moment.js</p>
-<h3 id="查看npm的镜像地址"><a href="#查看npm的镜像地址" class="headerlink" title="查看npm的镜像地址"></a>查看npm的镜像地址</h3><p>npm get registry                         查看当前镜像源</p>
-<h3 id="切换npm-镜像源"><a href="#切换npm-镜像源" class="headerlink" title="切换npm 镜像源"></a>切换npm 镜像源</h3><p>npm config set registry <a href="http://www.npmjs.org" target="_blank" rel="noopener">http://www.npmjs.org</a></p>
+        <h3 id="在git中创建ssh秘钥-stp-1"><a href="#在git中创建ssh秘钥-stp-1" class="headerlink" title="在git中创建ssh秘钥  stp:1"></a>在git中创建ssh秘钥  stp:1</h3><p><img src="../img/git-ssh.png" alt="avatar"></p>
+<h3 id="stp-2"><a href="#stp-2" class="headerlink" title="stp:2"></a>stp:2</h3><p><img src="../img/git-ssh1.png" alt="avatar"></p>
+<h3 id="stp-3"><a href="#stp-3" class="headerlink" title="stp:3"></a>stp:3</h3><p><img src="../img/git-ssh2.png" alt="avatar"></p>
+<h3 id="stp-4"><a href="#stp-4" class="headerlink" title="stp:4"></a>stp:4</h3><p><img src="../img/git-ssh3.png" alt="avatar"></p>
+<h3 id="来到自己的远程仓库-github"><a href="#来到自己的远程仓库-github" class="headerlink" title="来到自己的远程仓库 github"></a>来到自己的远程仓库 github</h3><p><img src="../img/git-ssh4.png" alt="avatar"></p>
+<h3 id="将秘钥粘贴到里面就ok了"><a href="#将秘钥粘贴到里面就ok了" class="headerlink" title="将秘钥粘贴到里面就ok了"></a>将秘钥粘贴到里面就ok了</h3><p><img src="../img/git-ssh5.png" alt="avatar"></p>
 
       
 
@@ -278,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/14/%E5%85%B3%E4%BA%8Ebootstrap%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/14/git%E7%94%9F%E6%88%90ssh/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/11/14/git%E7%94%9F%E6%88%90ssh/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git生成ssh
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/26/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">防抖节流</div>
+    <a href="/2020/11/14/%E5%85%B3%E4%BA%8Ebootstrap%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于bootstrap的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
