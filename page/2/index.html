@@ -152,6 +152,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-json-server模拟接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/json-server%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3/">json-server模拟接口</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/02/json-server%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2020-06-02T13:05:11.428Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="json-server的使用"><a href="#json-server的使用" class="headerlink" title="json-server的使用"></a>json-server的使用</h3><p>1.新建文件夹,文件夹内创建一个.json后缀的文件,<br>2.在命令行工具中npm install json-sever -g (全局安装)<br>3.在命令行中使用json-server 文件名.json  运行  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"data"</span>:[&#123;<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"name"</span>:<span class="string">"西游记"</span>,<span class="string">"status"</span>:<span class="literal">true</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">2</span>,<span class="string">"name"</span>:<span class="string">"红楼梦"</span>,<span class="string">"status"</span>:<span class="literal">true</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">3</span>,<span class="string">"name"</span>:<span class="string">"三国演义"</span>,<span class="string">"status"</span>:<span class="literal">true</span>&#125;,&#123;<span class="string">"id"</span>:<span class="number">4</span>,<span class="string">"name"</span>:<span class="string">"水浒传"</span>,<span class="string">"status"</span>:<span class="literal">true</span>&#125;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行成功  localhost:3000/data (可以查看)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获得所有数据 get请求</span></span><br><span class="line">axios.get(<span class="string">'http://localhost:3000/data'</span>).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(ret.data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建数据 post请求</span></span><br><span class="line">axios.post(<span class="string">'http://localhost:3000/data'</span>,&#123;</span><br><span class="line">   name:<span class="string">'西厢记'</span> ,</span><br><span class="line">   status:<span class="literal">true</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'添加成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改数据 put (带上id号)</span></span><br><span class="line">axios.put(<span class="string">'http://localhost:3000/data?'</span>+id,&#123;</span><br><span class="line">   name:<span class="string">'东游记'</span>,</span><br><span class="line">   status:<span class="literal">true</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'修改成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 局部修改</span></span><br><span class="line">axios.patch(<span class="string">'http://localhost:3000/data/1'</span>,&#123;</span><br><span class="line">   name:<span class="string">'东游记'</span>,</span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'修改成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//删除数据 delete请求  (删除带上id号)</span></span><br><span class="line">axios.delete(<span class="string">'http://localhost:3000/data/1'</span>).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'删除成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//模糊查找</span></span><br><span class="line">axios.get(<span class="string">'http://localhost:3000/data'</span>,&#123;</span><br><span class="line">    params:&#123;</span><br><span class="line">        <span class="comment">// 模糊查找使用属性加下划线like</span></span><br><span class="line">        name_like:<span class="string">'西'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(ret.data)  <span class="comment">// 西游记 数组对象找到</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/02/json-server%E6%A8%A1%E6%8B%9F%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue-router的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
