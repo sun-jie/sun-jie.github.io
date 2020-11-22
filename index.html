@@ -152,6 +152,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-echarts的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/21/echarts%E7%9A%84%E4%BD%BF%E7%94%A8/">echarts的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/21/echarts%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-11-21T06:54:02.475Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Echarts的使用上手"><a href="#Echarts的使用上手" class="headerlink" title="Echarts的使用上手"></a>Echarts的使用上手</h3><p><img src="../img/Echarts1.png" alt="avatar"><br><img src="../img/echarts2.png" alt="avatar"><br><img src="../img/Echarts3.png" alt="avatar"></p>
+<h3 id="echarts配置项"><a href="#echarts配置项" class="headerlink" title="echarts配置项"></a>echarts配置项</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">option = &#123;</span><br><span class="line">    <span class="comment">// color是数组,可以配置每条线条的颜色</span></span><br><span class="line">    color:[<span class="string">'pink'</span>,<span class="string">'yellow'</span>,<span class="string">'blue'</span>,<span class="string">'purple'</span>,<span class="string">'red'</span>],</span><br><span class="line">    <span class="comment">// 图表的标题</span></span><br><span class="line">    title: &#123;</span><br><span class="line">        <span class="comment">// 图标标题的文字</span></span><br><span class="line">        text: <span class="string">'折线图堆叠'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 提示框组件tooltip</span></span><br><span class="line">    tooltip: &#123;</span><br><span class="line">        <span class="comment">// trigger 触发方式</span></span><br><span class="line">        trigger: <span class="string">'axis'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 图标系列</span></span><br><span class="line">    legend: &#123;</span><br><span class="line">        <span class="comment">// 如果series里面有name了legend的data可以删除</span></span><br><span class="line">        <span class="comment">// data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 控制直角坐标的大小 使用与线型图 柱型图 控制坐标系和dom盒子边距大小 </span></span><br><span class="line">    grid: &#123;</span><br><span class="line">        <span class="comment">// left 的值可以是百分比 也可以的px</span></span><br><span class="line">        left: <span class="string">'3%'</span>,</span><br><span class="line">        right: <span class="string">'4%'</span>,</span><br><span class="line">        bottom: <span class="string">'3%'</span>,</span><br><span class="line">        <span class="comment">// 是否显示刻度  true显示  false 不显示</span></span><br><span class="line">        containLabel: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 工具箱组件  可以将图标下载为图片</span></span><br><span class="line">    toolbox: &#123;</span><br><span class="line">        feature: &#123;</span><br><span class="line">            saveAsImage: &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// X轴的配置</span></span><br><span class="line">    xAxis: &#123;</span><br><span class="line">        <span class="comment">// type 的值为category 类目值</span></span><br><span class="line">        type: <span class="string">'category'</span>,</span><br><span class="line">        <span class="comment">// 是否与坐标有间隙</span></span><br><span class="line">        boundaryGap: <span class="literal">true</span>,</span><br><span class="line">        <span class="comment">// X轴的值</span></span><br><span class="line">        data: [<span class="string">'周一'</span>, <span class="string">'周二'</span>, <span class="string">'周三'</span>, <span class="string">'周四'</span>, <span class="string">'周五'</span>, <span class="string">'周六'</span>, <span class="string">'周日'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// y轴的配置</span></span><br><span class="line">    yAxis: &#123;</span><br><span class="line">        <span class="comment">// value表示显示数字</span></span><br><span class="line">        type: <span class="string">'value'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// series 系列配置是个数组, 不是对象</span></span><br><span class="line">    series: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// name 每一个系列的名字</span></span><br><span class="line">            name: <span class="string">'邮件营销'</span>,</span><br><span class="line">            <span class="comment">// type 是线型图line还是柱型图bar</span></span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            <span class="comment">// stack 是没一项的叠加  一般不需要配置</span></span><br><span class="line">            <span class="comment">// stack: '总量',</span></span><br><span class="line">            data: [<span class="number">120</span>, <span class="number">132</span>, <span class="number">101</span>, <span class="number">134</span>, <span class="number">90</span>, <span class="number">230</span>, <span class="number">210</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'联盟广告'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            <span class="comment">// stack: '总量',</span></span><br><span class="line">            data: [<span class="number">220</span>, <span class="number">182</span>, <span class="number">191</span>, <span class="number">234</span>, <span class="number">290</span>, <span class="number">330</span>, <span class="number">310</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'视频广告'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            <span class="comment">// stack: '总量',</span></span><br><span class="line">            data: [<span class="number">150</span>, <span class="number">232</span>, <span class="number">201</span>, <span class="number">154</span>, <span class="number">190</span>, <span class="number">330</span>, <span class="number">410</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'直接访问'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            <span class="comment">// stack: '总量',</span></span><br><span class="line">            data: [<span class="number">320</span>, <span class="number">332</span>, <span class="number">301</span>, <span class="number">334</span>, <span class="number">390</span>, <span class="number">330</span>, <span class="number">320</span>]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'搜索引擎'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            <span class="comment">// stack: '总量',</span></span><br><span class="line">            data: [<span class="number">820</span>, <span class="number">932</span>, <span class="number">901</span>, <span class="number">934</span>, <span class="number">1290</span>, <span class="number">1330</span>, <span class="number">1320</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="../img/Echarts6.png" alt="avatar"></p>
+<p><img src="../img/Echarts7.png" alt="avatar"></p>
+<h3 id="坐标轴的刻度-xAxis-axisTick-坐标轴轴线相关设置-axisLine-坐标轴分隔先-xAxis-splitLine"><a href="#坐标轴的刻度-xAxis-axisTick-坐标轴轴线相关设置-axisLine-坐标轴分隔先-xAxis-splitLine" class="headerlink" title="坐标轴的刻度 xAxis.axisTick   坐标轴轴线相关设置 axisLine  坐标轴分隔先 xAxis.splitLine"></a>坐标轴的刻度 xAxis.axisTick   坐标轴轴线相关设置 axisLine  坐标轴分隔先 xAxis.splitLine</h3><h3 id="echarts使用第一步-先到echarts官网找到类似的图表"><a href="#echarts使用第一步-先到echarts官网找到类似的图表" class="headerlink" title="echarts使用第一步 先到echarts官网找到类似的图表"></a>echarts使用第一步 先到echarts官网找到类似的图表</h3><h3 id="第二步-初始化echarts"><a href="#第二步-初始化echarts" class="headerlink" title="第二步 初始化echarts"></a>第二步 初始化echarts</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myChart = echarts.init(<span class="string">'放图表的dom容器'</span>);</span><br><span class="line"><span class="comment">// 在官网中找到类似的图表copy 配置项option</span></span><br><span class="line"><span class="keyword">var</span> option = &#123;<span class="string">'拷贝过来的配置'</span>&#125;</span><br><span class="line"><span class="comment">// 将配置项交给初始化echarts</span></span><br><span class="line">myChart.setOption(option)</span><br></pre></td></tr></table></figure>
+<h3 id="注意点-柱型图-和-折线图的大小通过-grid配置-饼图则通过series中的-radius来配置-位置通过center来配置"><a href="#注意点-柱型图-和-折线图的大小通过-grid配置-饼图则通过series中的-radius来配置-位置通过center来配置" class="headerlink" title="注意点 柱型图 和 折线图的大小通过 grid配置  饼图则通过series中的 radius来配置 位置通过center来配置"></a>注意点 柱型图 和 折线图的大小通过 grid配置  饼图则通过series中的 radius来配置 位置通过center来配置</h3><h3 id="修改示例的样式-通过legend来设置"><a href="#修改示例的样式-通过legend来设置" class="headerlink" title="修改示例的样式 通过legend来设置"></a>修改示例的样式 通过legend来设置</h3><h3 id="折线图线条圆滑通过series中的smooth属性-主标轴上的通过xAxis-yAxis来配置-标题通过title来配置-提示框通过tooltip设置"><a href="#折线图线条圆滑通过series中的smooth属性-主标轴上的通过xAxis-yAxis来配置-标题通过title来配置-提示框通过tooltip设置" class="headerlink" title="折线图线条圆滑通过series中的smooth属性  主标轴上的通过xAxis yAxis来配置  标题通过title来配置 提示框通过tooltip设置"></a>折线图线条圆滑通过series中的smooth属性  主标轴上的通过xAxis yAxis来配置  标题通过title来配置 提示框通过tooltip设置</h3><h3 id="设置柱型图柱子的颜色在series中的color来配置-折线图也一样-series是个数组"><a href="#设置柱型图柱子的颜色在series中的color来配置-折线图也一样-series是个数组" class="headerlink" title="设置柱型图柱子的颜色在series中的color来配置  折线图也一样  series是个数组"></a>设置柱型图柱子的颜色在series中的color来配置  折线图也一样  series是个数组</h3><h3 id="如果series中有name-legend中的data可以删除"><a href="#如果series中有name-legend中的data可以删除" class="headerlink" title="如果series中有name legend中的data可以删除"></a>如果series中有name legend中的data可以删除</h3><h3 id="series中的type是柱型图-是-bar-线性图是line-饼图是-pie"><a href="#series中的type是柱型图-是-bar-线性图是line-饼图是-pie" class="headerlink" title="series中的type是柱型图 是 bar   线性图是line 饼图是 pie"></a>series中的type是柱型图 是 bar   线性图是line 饼图是 pie</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/21/echarts%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git生成ssh" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -756,79 +823,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/26/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-webpack的基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">webpack的基本使用</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-26T12:40:03.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="webpack的基本使用"><a href="#webpack的基本使用" class="headerlink" title="webpack的基本使用"></a>webpack的基本使用</h3><ol>
-<li>创建一个文件夹</li>
-<li>在命令行工具中使用npm init -y 初始化package.json</li>
-<li>在根目录下创建一个webpack.config.js文件</li>
-<li>在命令行中使用npm i webpack webpack-cli -D 下载</li>
-<li>在命令行中下载 webpack-dev-server -D</li>
-<li>在命令行下载npm i html-webpack-plugin -D (将文件从磁盘在抽到内存中)</li>
-<li>在命令行中下载 npm i style-loader css-loader -D</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入系统模块path </span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="comment">// 引入html-webpack-plugin插件</span></span><br><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = (<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="comment">// 将文件抽离到内存中</span></span><br><span class="line"><span class="keyword">const</span> htmlPlugin = <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">    <span class="comment">//要抽离的文件地址</span></span><br><span class="line">    template:<span class="string">'./src/index.html'</span>,</span><br><span class="line">    <span class="comment">//处理后的名字</span></span><br><span class="line">    filename:<span class="string">'index.html'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 导出</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 编译模式</span></span><br><span class="line">    mode: <span class="string">'development'</span>,</span><br><span class="line">    <span class="comment">// 需要处理的文件</span></span><br><span class="line">    entry: path.join(__dirname,<span class="string">'./scr/index.js'</span>),</span><br><span class="line">    <span class="comment">// 处理后的文件放那个文件夹,处理后的文件名称</span></span><br><span class="line">    output:&#123;</span><br><span class="line">        <span class="comment">//存放的路径</span></span><br><span class="line">        path:<span class="string">'./dist'</span>,</span><br><span class="line">        <span class="comment">//处理后的文件名称</span></span><br><span class="line">        filename:<span class="string">'index.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理html到内存中</span></span><br><span class="line">    plugins:[htmlPlugin],</span><br><span class="line">    <span class="comment">// 所有第三方文件模块的匹配规则</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[&#123;</span><br><span class="line">            <span class="comment">// test表示匹配的文件类型, use表示对应要调用的加载器 loader</span></span><br><span class="line">            <span class="comment">// 以css后缀的文件</span></span><br><span class="line">            test:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="在package-json文件中脚本命令-使用-npm-run-dev-启动webpack打包"><a href="#在package-json文件中脚本命令-使用-npm-run-dev-启动webpack打包" class="headerlink" title="在package.json文件中脚本命令 (使用 npm run dev) 启动webpack打包"></a>在package.json文件中脚本命令 (使用 npm run dev) 启动webpack打包</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">script:&#123;</span><br><span class="line">    <span class="comment">// 让文件在浏览器在自动打开 域名ip 为 127.0.0.1 端口为8080</span></span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --open --host 127.0.0.1 --port 8080"</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
