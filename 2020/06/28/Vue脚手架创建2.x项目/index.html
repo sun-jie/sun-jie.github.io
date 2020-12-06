@@ -31,8 +31,10 @@
 <meta property="og:image" content="http://yoursite.com/2020/06/28/img/vue2.x15.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/28/img/vue2.x16.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/28/img/vue2.x17.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/img/vue2.x18.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/28/img/vue2.x19.png">
 <meta property="article:published_time" content="2020-06-28T08:34:10.440Z">
-<meta property="article:modified_time" content="2020-11-29T09:27:51.148Z">
+<meta property="article:modified_time" content="2020-11-29T10:00:38.395Z">
 <meta property="article:author" content="孙杰">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/06/28/img/vue2.x1.png">
@@ -219,6 +221,16 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'./webpack.test.conf'</span>)</span><br></pre></td></tr></table></figure>
 <p>4、修改package.json<br><img src="../img/vue2.x17.png" alt="avatar"></p>
 <p>配置axios请求的时候，接口地址直接调用 process.env.API_ROOT 就好了，</p>
+<h3 id="vue项目的rem自适应"><a href="#vue项目的rem自适应" class="headerlink" title="vue项目的rem自适应"></a>vue项目的rem自适应</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i lib-flexible -S</span><br></pre></td></tr></table></figure>
+
+<p>在main.js中引入<br><img src="../img/vue2.x18.png" alt="avatar"><br>在index.html文件中设置meta标签:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">'viewport'</span> <span class="attr">content</span>=<span class="string">'width=device-width , initial-scale=1.0'</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在项目中写css时会自动将rem转化为px,需要安装px2rem这个工具,安装:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i px2rem-loader -D</span><br></pre></td></tr></table></figure>
+<p>在until.js配置文件对loader做相关配置:</p>
+<p><img src="../img/vue2.x19.png" alt="avatar"></p>
+<p>如上图,在cssLoader对象下面添加一个px2remLoader对象:</p>
+<p>然后将utils.js文件中的generateLoaders函数的loaders常量改为[cssLoader, px2remLoader],如下图:</p>
 
       
 

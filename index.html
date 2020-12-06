@@ -152,6 +152,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端权限控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/06/%E5%89%8D%E7%AB%AF%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">前端权限控制</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/06/%E5%89%8D%E7%AB%AF%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-12-06T08:44:49.969Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前端权限控制通过后端的数据实现前端权限控制"><a href="#前端权限控制通过后端的数据实现前端权限控制" class="headerlink" title="前端权限控制通过后端的数据实现前端权限控制"></a>前端权限控制通过后端的数据实现前端权限控制</h3><p>1-1 菜单的控制<br>1-2 界面的控制<br>1-3 按钮的控制<br>1-4 请求和响应的控<br><img src="../img/rights1.png" alt="avatar"></p>
+<p>在登录组件中将后端返回的数据存储在vuex中并将数据存储在本地的sessionStorage中</p>
+<p><img src="../img/rights2.png" alt="avatar"><br>在退出的事件中清除本地存储并初始话vuex中从数据window.reload()</p>
+<h3 id="在路由前置守卫中判断有没有登录的token"><a href="#在路由前置守卫中判断有没有登录的token" class="headerlink" title="在路由前置守卫中判断有没有登录的token"></a>在路由前置守卫中判断有没有登录的token</h3><p><img src="../img/rights3.png" alt="avatar"></p>
+<h3 id="在router中动态添加路由"><a href="#在router中动态添加路由" class="headerlink" title="在router中动态添加路由"></a>在router中动态添加路由</h3><p><img src="../img/rights4.png" alt="avatar"><br>要引入vuex中的数据rights  登录函数中调用动态路由函数<br><img src="../img/rights5.png" alt="avatar"><br>防止页面的刷新导致动态路由的丢失在app根组件的created生命周期中调用动态路由函数<br><img src="../img/rights6.png" alt="avatar"></p>
+<h3 id="按钮进行权限控制-通过自定义指令来实现"><a href="#按钮进行权限控制-通过自定义指令来实现" class="headerlink" title="按钮进行权限控制 通过自定义指令来实现"></a>按钮进行权限控制 通过自定义指令来实现</h3><p><img src="../img/rights7.png" alt="avatar"><br>创建一个文件夹,在文件夹中创建permission.js  但是在main.js中必须执行  import ‘../utils/permission.js’<br>要使用<br>import Vue from ‘vue’<br>import router from ‘@/rourer/index.js’<br><img src="../img/rights9.png" alt="avatar"><br><img src="../img/rights8.png" alt="avatar"></p>
+<h3 id="除了登录外其他的请求都需要条件token信息"><a href="#除了登录外其他的请求都需要条件token信息" class="headerlink" title="除了登录外其他的请求都需要条件token信息"></a>除了登录外其他的请求都需要条件token信息</h3><p><img src="../img/rights10.png" alt="avatar"></p>
+<h3 id="在前端阻止请求"><a href="#在前端阻止请求" class="headerlink" title="在前端阻止请求"></a>在前端阻止请求</h3><p><img src="../img/rights11.png" alt="avatar"><br>在请求拦截中拦截<br><img src="../img/rights12.png" alt="avatar"></p>
+<p>响应拦截<br><img src="../img/rights13.png" alt="avatar"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/06/%E5%89%8D%E7%AB%AF%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-echarts的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -770,6 +841,16 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'./webpack.test.conf'</span>)</span><br></pre></td></tr></table></figure>
 <p>4、修改package.json<br><img src="../img/vue2.x17.png" alt="avatar"></p>
 <p>配置axios请求的时候，接口地址直接调用 process.env.API_ROOT 就好了，</p>
+<h3 id="vue项目的rem自适应"><a href="#vue项目的rem自适应" class="headerlink" title="vue项目的rem自适应"></a>vue项目的rem自适应</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i lib-flexible -S</span><br></pre></td></tr></table></figure>
+
+<p>在main.js中引入<br><img src="../img/vue2.x18.png" alt="avatar"><br>在index.html文件中设置meta标签:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">'viewport'</span> <span class="attr">content</span>=<span class="string">'width=device-width , initial-scale=1.0'</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在项目中写css时会自动将rem转化为px,需要安装px2rem这个工具,安装:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i px2rem-loader -D</span><br></pre></td></tr></table></figure>
+<p>在until.js配置文件对loader做相关配置:</p>
+<p><img src="../img/vue2.x19.png" alt="avatar"></p>
+<p>如上图,在cssLoader对象下面添加一个px2remLoader对象:</p>
+<p>然后将utils.js文件中的generateLoaders函数的loaders常量改为[cssLoader, px2remLoader],如下图:</p>
 
       
 
@@ -783,74 +864,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/28/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA2.x%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue脚手架项目打包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/">vue脚手架项目打包</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/26/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2020-06-26T14:34:49.361Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="在项目完成后使用webpack打包"><a href="#在项目完成后使用webpack打包" class="headerlink" title="在项目完成后使用webpack打包"></a>在项目完成后使用webpack打包</h3><ol>
-<li>在根目录下新建vue.config.js文件</li>
-<li>使用npm run build 打包</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//要处理的文件</span></span><br><span class="line">    publicPath:<span class="string">'./'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/">展开全文 >></a>
         </p>
       
 
