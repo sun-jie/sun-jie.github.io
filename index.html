@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-换皮肤的案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/13/%E6%8D%A2%E7%9A%AE%E8%82%A4%E7%9A%84%E6%A1%88%E4%BE%8B/">换皮肤的案例</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/13/%E6%8D%A2%E7%9A%AE%E8%82%A4%E7%9A%84%E6%A1%88%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-12-13T07:30:53.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="使用scss处理页面皮肤的更换实际上就是通过设置body标签的自定义属性值的变化达到不同的颜色的需求"><a href="#使用scss处理页面皮肤的更换实际上就是通过设置body标签的自定义属性值的变化达到不同的颜色的需求" class="headerlink" title="使用scss处理页面皮肤的更换实际上就是通过设置body标签的自定义属性值的变化达到不同的颜色的需求"></a>使用scss处理页面皮肤的更换实际上就是通过设置body标签的自定义属性值的变化达到不同的颜色的需求</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$themes</span>: (</span><br><span class="line">  black:(</span><br><span class="line">    a-bg:red,</span><br><span class="line">  ),</span><br><span class="line">  white: (</span><br><span class="line">    a-bg:blue,</span><br><span class="line">  )</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">@mixin</span> themeify &#123;</span><br><span class="line">  <span class="keyword">@each</span> <span class="variable">$theme-name</span>,</span><br><span class="line">  <span class="variable">$theme-map</span> in <span class="variable">$themes</span> &#123;</span><br><span class="line">    <span class="variable">$theme-map</span>: <span class="variable">$theme-map</span> !global;</span><br><span class="line">    <span class="selector-tag">body</span><span class="selector-attr">[data-theme = '#&#123;$theme-name&#125;']</span> &amp; &#123;</span><br><span class="line">      <span class="keyword">@content</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@function</span> themed(<span class="variable">$key</span>) &#123;</span><br><span class="line">  <span class="keyword">@return</span> map-get(<span class="variable">$theme-map</span> , <span class="variable">$key</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="keyword">@include</span> themeify &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: themed(<span class="string">'a-bg'</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在vscode编辑器里面下载Easy-scss插件,只要通过编译scss文件会转换为css文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">body</span><span class="selector-attr">[data-theme=<span class="string">'black'</span>]</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span><span class="selector-attr">[data-theme=<span class="string">'white'</span>]</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/13/%E6%8D%A2%E7%9A%AE%E8%82%A4%E7%9A%84%E6%A1%88%E4%BE%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端权限控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -793,109 +858,9 @@
 
 
   
-    <article id="post-Vue脚手架创建2.x项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA2.x%E9%A1%B9%E7%9B%AE/">Vue脚手架创建2.x项目</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/28/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA2.x%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  	<time datetime="2020-06-28T08:34:10.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="创建2-x的vue项目"><a href="#创建2-x的vue项目" class="headerlink" title="创建2.x的vue项目"></a>创建2.x的vue项目</h3><p>stp1. 在命名行中使用  vue init webpack 项目名称<br><img src="../img/vue2.x1.png" alt="avatar"><br>stp2. 默认名字<br>stp3.回车<br>stp4.创建项目的作者<br><img src="../img/vue2.x2.png" alt="avatar"><br><img src="../img/vue2.x3.png" alt="avatar"><br><img src="../img/vue2.x4.png" alt="avatar"><br><img src="../img/vue2.x5.png" alt="avatar"><br><img src="../img/vue2.x6.png" alt="avatar"><br><img src="../img/vue2.x7.png" alt="avatar"><br><img src="../img/vue2.x8.png" alt="avatar"><br><img src="../img/vue2.x9.png" alt="avatar"></p>
-<p>这样项目就创建完毕了<br>使用npm run dev 跑项目</p>
-<h3 id="vue2-x项目的配置eslint注释掉项目内的ESlint-在开发中的eslint报错"><a href="#vue2-x项目的配置eslint注释掉项目内的ESlint-在开发中的eslint报错" class="headerlink" title="vue2.x项目的配置eslint注释掉项目内的ESlint 在开发中的eslint报错"></a>vue2.x项目的配置eslint注释掉项目内的ESlint 在开发中的eslint报错</h3><p>项目目录下build-&gt;webpack.base.conf.js文件里面有段代码  注释掉！！！然后重新运行<br><img src="../img/vue2.x10.png" alt="avatar"></p>
-<h3 id="vue2-x的项目配置开发环境和生产环境"><a href="#vue2-x的项目配置开发环境和生产环境" class="headerlink" title="vue2.x的项目配置开发环境和生产环境"></a>vue2.x的项目配置开发环境和生产环境</h3><h3 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h3><p>一般情况下开发环境是会跨域的，所以我们只需要在跨域的位置配置即可。进入build\webpack.dev.conf.js，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">  <span class="string">'process.env'</span>: <span class="built_in">require</span>(<span class="string">'../config/dev.env'</span>),</span><br><span class="line">  BASE_URL: <span class="string">"'11111xxxxxxxxx'"</span>  <span class="comment">// 这里就是开发环境请求的url  </span></span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成环境配置"><a href="#生成环境配置" class="headerlink" title="生成环境配置"></a>生成环境配置</h3><p>进入build\webpack.prod.conf.js，添加属性BASE_API为自己的生产环境地址即可，如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">'process.env'</span>: env,</span><br><span class="line">      BASE_URL:<span class="string">"'xx11111xxxxxxx'"</span>  <span class="comment">// 生成环境的请求地址</span></span><br><span class="line">    &#125;),</span><br></pre></td></tr></table></figure>
-
-
-<p>###调用后台接口<br>新建request.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建axios实例</span></span><br><span class="line"><span class="keyword">const</span> service = axios.create(&#123;</span><br><span class="line">  <span class="comment">// 进行判断</span></span><br><span class="line">  baseURL: process.env.NODE_ENV===<span class="string">'production'</span> ? process.env.BASE_API : <span class="string">"/api"</span>,</span><br><span class="line">  timeout: <span class="number">20000</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="vue2-x-打包环境配置-意思就是测试包-生成包-开发包"><a href="#vue2-x-打包环境配置-意思就是测试包-生成包-开发包" class="headerlink" title="vue2.x 打包环境配置  (意思就是测试包,生成包,开发包)"></a>vue2.x 打包环境配置  (意思就是测试包,生成包,开发包)</h3><p>npm run build 调用开发环境接口，打包开发环境<br>npm run build:test 调用测试环境接口，打包测试环境<br>npm run build:prod 调用生产环境接口，打包生产环境</p>
-<p>vue项目用vue-cli脚手架安装完成之后，生成的项目中会有build,config这两个文件夹</p>
-<p><img src="../img/vue2.x12.png" alt="avatar"></p>
-<p>1、在build文件下新建webpack.test.conf.js<br>在build文件下新建webpack.test.conf.js，将webpack.prod.conf.js内容复制过来。<br>修改webpack.test.conf.js文件<br>将const env = require(‘../config/prod.env’)；<br>修改为：const env = require(‘../config/test.env’)；<br>2、在config文件下新建test.env.js</p>
-<p>在config文件下新建test.env.js，将prod.env.js内容复制过来；<br>分别在dev.env.js,test.env.js,prod.env.js中定义变量API_ROOT，</p>
-<p>dev.env.js<br><img src="../img/vue2.x13.png" alt="avatar"></p>
-<p>test.env.js<br><img src="../img/vue2.x14.png" alt="avatar"></p>
-<p>prod.env.js<br><img src="../img/vue2.x15.png" alt="avatar"></p>
-<p>3、在build文件下新建test.js<br><img src="../img/vue2.x16.png" alt="avatar"><br>把build.js 内容复制到test.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'./webpack.prod.conf'</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'./webpack.test.conf'</span>)</span><br></pre></td></tr></table></figure>
-<p>4、修改package.json<br><img src="../img/vue2.x17.png" alt="avatar"></p>
-<p>配置axios请求的时候，接口地址直接调用 process.env.API_ROOT 就好了，</p>
-<h3 id="vue项目的rem自适应"><a href="#vue项目的rem自适应" class="headerlink" title="vue项目的rem自适应"></a>vue项目的rem自适应</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i lib-flexible -S</span><br></pre></td></tr></table></figure>
-
-<p>在main.js中引入<br><img src="../img/vue2.x18.png" alt="avatar"><br>在index.html文件中设置meta标签:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">'viewport'</span> <span class="attr">content</span>=<span class="string">'width=device-width , initial-scale=1.0'</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后在项目中写css时会自动将rem转化为px,需要安装px2rem这个工具,安装:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i px2rem-loader -D</span><br></pre></td></tr></table></figure>
-<p>在until.js配置文件对loader做相关配置:</p>
-<p><img src="../img/vue2.x19.png" alt="avatar"></p>
-<p>如上图,在cssLoader对象下面添加一个px2remLoader对象:</p>
-<p>然后将utils.js文件中的generateLoaders函数的loaders常量改为[cssLoader, px2remLoader],如下图:</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/28/Vue%E8%84%9A%E6%89%8B%E6%9E%B6%E5%88%9B%E5%BB%BA2.x%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
