@@ -152,6 +152,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-操作数组" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/">操作数组</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2020-05-26T03:03:32.913Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数组的操作方法"><a href="#数组的操作方法" class="headerlink" title="数组的操作方法"></a>数组的操作方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组的遍历</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>];</span><br><span class="line"><span class="comment">// 使用for循环变量</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在一个数组里面放几个不同类型的数据</span></span><br><span class="line">     <span class="keyword">let</span> ary = [<span class="string">''</span>, <span class="number">122</span>, <span class="literal">true</span>, <span class="literal">null</span>, &#123;&#125;,</span><br><span class="line">         []</span><br><span class="line">     ];</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">         <span class="comment">// 使用Object原型上的toString方法</span></span><br><span class="line">         <span class="keyword">let</span> checked = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line">         <span class="comment">// 遍历数组</span></span><br><span class="line">         data.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">             <span class="comment">// 打印数组中的每一个元素返回的数据类型</span></span><br><span class="line">             <span class="built_in">console</span>.log(checked.call(item));</span><br><span class="line">         &#125;)</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 调用函数把数组传递</span></span><br><span class="line">     type(ary)</span><br><span class="line">     <span class="comment">// [object String]</span></span><br><span class="line">     <span class="comment">// [object Number]</span></span><br><span class="line">     <span class="comment">// [object Boolean]</span></span><br><span class="line">     <span class="comment">// [object Null]</span></span><br><span class="line">     <span class="comment">// [object Object]</span></span><br><span class="line">     <span class="comment">// [object Array]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ES6-Promise异步基本操作"><a href="#ES6-Promise异步基本操作" class="headerlink" title="ES6 Promise异步基本操作"></a>ES6 Promise异步基本操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// promise异步基本操作</span></span><br><span class="line">      <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">          <span class="comment">//异步任务</span></span><br><span class="line">          setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="comment">// 判断条件</span></span><br><span class="line">              <span class="keyword">let</span> flag = <span class="literal">true</span>;</span><br><span class="line">              <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                  <span class="comment">// 正常情况</span></span><br><span class="line">                  resolve(<span class="string">'hello world'</span>);</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  <span class="comment">//  异常情况</span></span><br><span class="line">                  reject(<span class="string">'error'</span>)</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;, <span class="number">100</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="comment">// 使用Promise实例化API  then是成功后的使用方法  catch是异常后的方法</span></span><br><span class="line">      p.then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 如果Promise内部走了resolve,就不会走reject</span></span><br><span class="line">          <span class="built_in">console</span>.log(result);  <span class="comment">// hello world</span></span><br><span class="line">      &#125;).catch(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(result);</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+<p>[x]</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
